@@ -1,6 +1,6 @@
 class Destination < ApplicationRecord
-  geocoded_by :address, latitude: :lat, longitude: :lon
-  after_validation :geocode
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   belongs_to :user
 end
