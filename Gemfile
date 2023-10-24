@@ -82,3 +82,5 @@ gem 'mini_racer'
 gem 'jquery-rails'
 
 gem 'geocoder'
+
+gem 'dotenv-rails'
