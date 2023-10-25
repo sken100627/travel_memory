@@ -8,9 +8,22 @@ class DestinationsController < ApplicationController
   end
 
   def create
+    @destination = Destination.new(destination_params)
+    if @destination.save
+      redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
 
   end
+
+  private
+
+  def destination_params
+    params.require(:destination).permit(:place, :address).merge(user_id: current_user.id)
+  end
+
 end
