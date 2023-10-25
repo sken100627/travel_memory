@@ -1,0 +1,27 @@
+<div class="bd-cheatsheet container-fluid bg-body">
+  <div class="my-3" id="sizing">
+    <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+      <h3>目的地を登録</h3>
+    </div>
+
+    <%= form_with model: @destination, url: destinations_path, local: true do |f| %>
+      <div class="mb-3">
+        <%= f.label :place %>
+        <%= f.text_field :place, class: "form-control form-control-lg", placeholder: "滋賀県" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control form-control-lg", placeholder: "1230000" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :image %>
+        <%= f.file_field :image, class: "form-control form-control-lg" %>
+      </div>
+      
+      <div class="md-3">
+        <%= f.submit "登録", class: "btn btn-primary btn-lg px-4 gap-3" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
