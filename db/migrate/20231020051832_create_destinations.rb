@@ -5,8 +5,8 @@ class CreateDestinations < ActiveRecord::Migration[7.0]
       t.string :address, null: false, default: ""
       t.float :latitude
       t.float :longitude
-      t.string :year, null: false, default: ""
-      t.string :date, null: false, default: ""
+      t.date :start_date, null: false
+      t.date :end_date, null: false
       t.references :user, foreign_key: true
 
       t.timestamps
