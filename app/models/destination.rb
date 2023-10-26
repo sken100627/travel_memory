@@ -3,4 +3,5 @@ class Destination < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
   belongs_to :user
+  has_one_attached :image
 end
