@@ -40,16 +40,52 @@
 
 </div>
 
-<% @destinations.each do |destination| %>
-  <div class="card text-bg-dark">
-    <%= image_tag destination.image, class: "card-img" %>
-    <div class="card-img-overlay">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+<div class="container px-4 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom">旅の記録</h2>
+
+  <% @destinations.each do |destination| %>
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <div class="card text-bg-dark">
+        <%= image_tag destination.image, class: "card-img destination-top" %>
+        <div class="card-img-overlay">
+          <h5 class="card-title"><%= destination.place %></h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small>Last updated 3 mins ago</small></p>
+        </div>
+      </div>
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
 
 
+<div class="container px-4 py-5" id="custom-cards">
+  <h2 class="pb-2 border-bottom">旅の記録</h2>
 
+  <% @destinations.each do |destination| %>
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <div class="card text-bg-dark">
+        <%= image_tag destination.image, class: "card-img destination-top" %>
+        <div class="card-img-overlay">
+          <h5 class="card-title"><%= destination.place %></h5>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+              </li>
+              <li class="d-flex align-items-center me-3">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                <small><%= destination.year %></small>
+              </li>
+              <li class="d-flex align-items-center">
+                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                <small><%= destination.date %><</small>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
