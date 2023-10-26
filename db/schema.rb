@@ -40,10 +40,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_032822) do
   end
 
   create_table "destinations", charset: "utf8mb4", force: :cascade do |t|
-    t.string "place"
-    t.string "address"
+    t.string "place", default: "", null: false
+    t.string "address", default: "", null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "year", default: "", null: false
+    t.string "date", default: "", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
