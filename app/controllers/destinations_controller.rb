@@ -23,7 +23,7 @@ class DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:place, :address, :image).merge(user_id: current_user.id)
+    params.require(:destination).permit(:place, :address, :image, :start_date, :end_date).merge(user_id: current_user.id)
   end
 
 end
