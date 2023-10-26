@@ -16,8 +16,7 @@
   <% @destinations.each do |destination| %>
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
       <div class="col">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
-        <%= image_tag destination.image, class: "card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg destination-top" %>
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: <%= image_tag(destination.image) %>;">
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
             <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= destination.place %></h3>
             <ul class="d-flex list-unstyled mt-auto">
@@ -41,7 +40,16 @@
 
 </div>
 
-
+<% @destinations.each do |destination| %>
+  <div class="card text-bg-dark">
+    <%= image_tag destination.image, class: "card-img" %>
+    <div class="card-img-overlay">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small>Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+<% end %>
 
 
 
