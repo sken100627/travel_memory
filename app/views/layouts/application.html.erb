@@ -12,15 +12,13 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">TravelMemory</a></h1>
+    <header class="bd-header bg-purple py-3 d-flex align-items-stretch border-bottom border-dark">
+      <div class="container-fluid d-flex align-items-center">
+        <h1 class="d-flex align-items-center fs-4 text-white mb-0"><a href="/">TravelMemory</a></h1>
         <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
-          </div>
+          <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
         <% else %>
-          <div class="grid-6">
+          <div class="d-flex align-items-center fs-4 text-white mb-0">
             <%= link_to "ログイン", new_user_session_path, class: "post" %>
             <%= link_to "新規登録", new_user_registration_path, class: "post" %>
           </div>
