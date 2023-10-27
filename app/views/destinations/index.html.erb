@@ -13,28 +13,32 @@
   <h2 class="pb-2 border-bottom">旅の記録</h2>
 
   <% @destinations.each do |destination| %>
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-    <div class="col">
-      <div class="card text-bg-dark">
-        <%= image_tag destination.image, class: "card-img destination-top" %>
-        <div class="card-img-overlay">
-          <h5 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= destination.place %></h5>
-            <ul class="d-flex list-unstyled mt-auto align-items-end">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small><%= destination.start_date %></small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small><%= destination.end_date %></small>
-              </li>
-            </ul>
+    <%= link_to destination_path(destination.id), data: { turbo: false } do %>
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <div class="card text-bg-dark">
+            
+            <%= image_tag destination.image, class: "card-img destination-top" %>
+            
+            <div class="card-img-overlay">
+              <h5 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= destination.place %></h5>
+                <ul class="d-flex list-unstyled mt-auto align-items-end">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small><%= destination.start_date %></small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                    <small><%= destination.end_date %></small>
+                  </li>
+                </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
   <% end %>
 </div>
