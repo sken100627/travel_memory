@@ -2,7 +2,7 @@
   <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
   <h1 class="display-5 fw-bold text-body-emphasis">目的地を登録</h1>
   <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+    <p class="lead mb-4">Travel Memoryアプリを使って、いつまでも残る冒険の思い出を作りましょう。旅を記録し、写真を追加し、体験を共有しましょう。日本中を探検して、旅行のストーリーを簡単に宝物にしましょう。</p>
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
       <%= link_to "登録", new_destination_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
     </div>
@@ -13,28 +13,32 @@
   <h2 class="pb-2 border-bottom">旅の記録</h2>
 
   <% @destinations.each do |destination| %>
-  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-    <div class="col">
-      <div class="card text-bg-dark">
-        <%= image_tag destination.image, class: "card-img destination-top" %>
-        <div class="card-img-overlay">
-          <h5 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= destination.place %></h5>
-            <ul class="d-flex list-unstyled mt-auto align-items-end">
-              <li class="me-auto">
-                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
-              </li>
-              <li class="d-flex align-items-center me-3">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
-                <small><%= destination.start_date %></small>
-              </li>
-              <li class="d-flex align-items-center">
-                <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
-                <small><%= destination.end_date %></small>
-              </li>
-            </ul>
+    <%= link_to destination_path(destination.id), data: { turbo: false } do %>
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col">
+          <div class="card text-bg-dark">
+            
+            <%= image_tag destination.image, class: "card-img destination-top" %>
+            
+            <div class="card-img-overlay">
+              <h5 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= destination.place %></h5>
+                <ul class="d-flex list-unstyled mt-auto align-items-end">
+                  <li class="me-auto">
+                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                  </li>
+                  <li class="d-flex align-items-center me-3">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                    <small><%= destination.start_date %></small>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                    <small><%= destination.end_date %></small>
+                  </li>
+                </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
   <% end %>
 </div>

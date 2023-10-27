@@ -17,7 +17,7 @@ class DestinationsController < ApplicationController
   end
 
   def show
-
+    @destination = Destination.find(params[:id])
   end
 
   private
