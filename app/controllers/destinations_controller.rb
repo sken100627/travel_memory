@@ -20,6 +20,19 @@ class DestinationsController < ApplicationController
     @destination = Destination.find(params[:id])
   end
 
+  def edit
+    @destination = Destination.find(params[:id])
+  end
+
+  def update
+    @destination = Destination.find(params[:id])
+    if @destination.update(destination_params)
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def destination_params

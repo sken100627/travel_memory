@@ -4,7 +4,7 @@
       <h3>目的地を編集</h3>
     </div>
 
-    <%= form_with model: @destination, url: destinations_path, local: true do |f| %>
+    <%= form_with model: @destination, url: destination_path, local: true do |f| %>
       <div class="mb-3">
         <%= f.label :place %>
         <%= f.text_field :place, class: "form-control form-control-lg", placeholder: "滋賀県" %>
