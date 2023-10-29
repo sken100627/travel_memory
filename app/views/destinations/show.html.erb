@@ -1,32 +1,28 @@
 <h1><%= @destination.place %></h1>
-<div class='googlemap' id='map'></div>
-<%= link_to "編集", edit_destination_path(@destination.id) %>
 
-<script>
-  let map
-  
-  function initMap(){
-    geocoder = new google.maps.Geocoder()
-    var test ={lat: <%= @destination.latitude %>, lng: <%= @destination.longitude %>};
-  
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: test,
-      zoom: 15,
-      mapTypeControl: false,  
-      streetViewControl: false
-    });
-
-    var contentString = '住所：<%= @destination.address %>';
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-  
-    marker = new google.maps.Marker({
-      position:  test,
-      map: map,
-      title: contentString
-    });
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?ENV['GOOGLEMAP']&callback=initMap" async defer></script>
-
+<div class="table-responsive small">
+  <table class="table table-striped table-sm">
+    <tbody>
+      <tr>
+        <td>宿代</td>
+        <td>random</td>
+      </tr>
+      <tr>
+        <td>ガソリン代</td>
+        <td>placeholder</td>
+      </tr>
+      <tr>
+        <td>食費</td>
+        <td>data</td>
+      </tr>
+      <tr>
+        <td>高速代</td>
+        <td>information</td>
+      </tr>
+      <tr>
+        <td>合計</td>
+        <td>text</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
