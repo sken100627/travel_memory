@@ -14,35 +14,22 @@
   <body>
 
     <header>
-        <div class="px-3 py-2 text-bg-dark border-bottom">
-          <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                TravelMemory
-              </a>
-            </div>
+        <nav class="navbar bg-body-tertiary bg-secondary">
+          <div class="container-fluid">
+            <a class="navbar-brand text-light fs-3" href="/">
+              Travel Memory
+            </a>
+            <% if user_signed_in? %>
+              <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-primary", data: { turbo_method: :delete } %>
+            <% else %>
+              <div class="d-flex align-items-center fs-4 text-white mb-0">
+                <%= link_to "ログイン", new_user_session_path, class: "btn btn-light text-dark me-2" %>
+                <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
+              </div>
+            <% end %>
           </div>
-        </div>
-        <div class="px-3 py-2 border-bottom mb-3">
-          <div class="container d-flex flex-wrap justify-content-center">
-            <div class="text-end">
-              <% if user_signed_in? %>
-                <%= link_to "ログアウト", destroy_user_session_path, class: "btn btn-primary", data: { turbo_method: :delete } %>
-              <% else %>
-                <div class="d-flex align-items-center fs-4 text-white mb-0">
-                  <%= link_to "ログイン", new_user_session_path, class: "btn btn-light text-dark me-2" %>
-                  <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
+        </nav>
     </header>
-
-
-
-
-
 
     <%= yield %>
   </body>
