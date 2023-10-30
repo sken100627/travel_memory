@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_25_032822) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_30_085516) do
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_032822) do
     t.index ["user_id"], name: "index_destinations_on_user_id"
   end
 
+  create_table "records", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "gasoline_cost", null: false
+    t.integer "accommondation_fee", null: false
+    t.integer "express_fee", null: false
+    t.integer "total", null: false
+    t.bigint "user_id"
+    t.bigint "destination_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_records_on_destination_id"
+    t.index ["user_id"], name: "index_records_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
@@ -68,4 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_25_032822) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "destinations", "users"
+  add_foreign_key "records", "destinations"
+  add_foreign_key "records", "users"
 end
