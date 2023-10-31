@@ -3,4 +3,22 @@ class RecordsController < ApplicationController
     @destination = Destination.find(params[:destination_id])
     @record = Record.new
   end
+
+  def create
+    @destination = Destination.find(params[:destination_id])
+    @record = Record.new(record_params)
+    if @record.save
+      redirect_to destination_path(@destination.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def record_params
+    params.require(:record).permit(:gasoline_cost, :accommondation_fee, :express_fee, :total, :food_expenses).merge(user_id: current_user.id, destination_id: params[:destination_id])
+  end
+
+
 end

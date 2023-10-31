@@ -14,7 +14,7 @@
         </tr>
         <tr>
           <td>食費</td>
-          <td><%= f.text_field :accommondation_fee%></td>
+          <td><%= f.text_field :food_expenses%></td>
         </tr>
         <tr>
           <td>高速代</td>
@@ -26,5 +26,6 @@
         </tr>
       </tbody>
     </table>
+    <%= f.submit "登録", class: "btn btn-primary btn-lg px-4 gap-3" %>
   </div>
 <% end %>
