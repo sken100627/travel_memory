@@ -5,23 +5,23 @@
     <tbody>
       <tr>
         <td>宿代</td>
-        <td>1000</td>
+        <td><%= @record.accommondation_fee %></td>
       </tr>
       <tr>
         <td>ガソリン代</td>
-        <td>1000</td>
+        <td><%= @record.gasoline_cost %></td>
       </tr>
       <tr>
         <td>食費</td>
-        <td>1000</td>
+        <td><%= @record.food_expenses %></td>
       </tr>
       <tr>
         <td>高速代</td>
-        <td>1000</td>
+        <td><%= @record.express_fee %></td>
       </tr>
       <tr>
         <td>合計</td>
-        <td>4000</td>
+        <td><%= @record.total %></td>
       </tr>
     </tbody>
   </table>
@@ -29,4 +29,3 @@
 
 <%= link_to "編集", edit_destination_path(@destination.id) %>
 <%= link_to "経費登録", new_destination_record_path(@destination.id) %>
-<%= link_to "経費", destination_record_path(@destination.id) %>

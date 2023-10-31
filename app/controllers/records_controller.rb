@@ -14,6 +14,11 @@ class RecordsController < ApplicationController
     end
   end
 
+  def show
+    @destination = Destination.find(params[:destination_id])
+    @record = Record.find(params[:id])
+  end
+
   private
 
   def record_params
