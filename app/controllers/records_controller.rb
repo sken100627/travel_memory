@@ -24,6 +24,16 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
   end
 
+  def update
+    @destination = Destination.find(params[:destination_id])
+    @record = Record.find(params[:id])
+    if @record.update(record_params)
+      redirect_to destination_record_path(@destination.id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def record_params
