@@ -12,7 +12,6 @@ class DestinationsController < ApplicationController
     if @destination.save
       redirect_to root_path
     else
-      puts @destination.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
