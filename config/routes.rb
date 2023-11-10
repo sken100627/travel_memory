@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :destinations do
     resources :records
   end
+  resources :departures
 
 end
