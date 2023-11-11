@@ -15,6 +15,6 @@ class DeparturesController < ApplicationController
   private
 
   def departure_params
-    params.require(:departure).permit(:place, :address).merge(user_id: current_user.id)
+    params.require(:departure).permit(:spot, :location).merge(user_id: current_user.id)
   end
 end
