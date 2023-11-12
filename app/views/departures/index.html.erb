@@ -1,26 +1,14 @@
-<div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold text-body-emphasis">目的地を登録</h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Travel Memoryアプリを使って、いつまでも残る冒険の思い出を作りましょう。旅を記録し、写真を追加し、体験を共有しましょう。日本中を探検して、旅行のストーリーを簡単に宝物にしましょう。</p>
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <%= link_to "登録", new_destination_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
-    </div>
-  </div>
-</div>
-
-
-
 <div class="container px-4 py-5" id="custom-cards">
   <h2 class="pb-2 border-bottom">旅の記録</h2>
 
   
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-    <% @destinations.each do |destination| %>
-      <%= link_to destination_path(destination.id), data: { turbo: false } do %>
+    <% @departures.each do |departure| %>
+      <%= link_to destination_departure_path(departure.id), data: { turbo: false } do %>
         <div class="col">
           <div class="card text-bg-dark">
             
-            <%= image_tag destination.image, class: "card-img destination-top" %>
+            <%= image_tag @destination.image, class: "card-img destination-top" %>
             
             <div class="card-img-overlay">
               <h5 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= destination.place %></h5>
