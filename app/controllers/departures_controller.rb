@@ -1,4 +1,8 @@
 class DeparturesController < ApplicationController
+  def index
+    @distance = Geocoder::Calculations.distance_between([destinations.latitude,destinations.longitude],[departures.latitude,departures.longitude]).round
+  end
+
   def new
     @departure = Departure.new
   end
