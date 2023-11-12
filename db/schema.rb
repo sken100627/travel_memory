@@ -45,8 +45,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_10_052958) do
     t.float "latitude"
     t.float "longitude"
     t.bigint "user_id"
+    t.bigint "destination_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["destination_id"], name: "index_departures_on_destination_id"
     t.index ["user_id"], name: "index_departures_on_user_id"
   end
 
@@ -92,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_10_052958) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "departures", "destinations"
   add_foreign_key "departures", "users"
   add_foreign_key "destinations", "users"
   add_foreign_key "records", "destinations"

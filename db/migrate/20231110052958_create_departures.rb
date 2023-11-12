@@ -6,6 +6,7 @@ class CreateDepartures < ActiveRecord::Migration[7.0]
       t.float :latitude
       t.float :longitude
       t.references :user, foreign_key: true
+      t.references :destination, foreign_key: true
 
       t.timestamps
     end
