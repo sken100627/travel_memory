@@ -4,7 +4,7 @@
       <h3>出発地を登録</h3>
     </div>
 
-    <%= form_with model: @departure, url: departures_path, local: true do |f| %>
+    <%= form_with model: @departure, url: destination_departures_path(@destination.id), local: true do |f| %>
       <div class="mb-3">
         <%= f.label :spot %>
         <%= f.text_field :spot, class: "form-control form-control-lg", placeholder: "滋賀県" %>
