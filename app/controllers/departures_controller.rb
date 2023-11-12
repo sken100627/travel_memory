@@ -1,6 +1,6 @@
 class DeparturesController < ApplicationController
   def index
-    @distance = Geocoder::Calculations.distance_between([destinations.latitude,destinations.longitude],[departures.latitude,departures.longitude]).round
+    @distance = Geocoder::Calculations.distance_between([destination.latitude,destination.longitude],[departure.latitude,departure.longitude]).round
   end
 
   def new
