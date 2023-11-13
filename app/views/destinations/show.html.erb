@@ -45,4 +45,6 @@
 <%= link_to "経費登録", new_destination_record_path(@destination.id) %>
 <%= link_to "経費", destination_record_path(@destination.id) %>
 <%= link_to '戻る', :back %>
-<%= link_to "距離を確認", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}" %>
+<% if @destination.departure.id.present? %>
+ <%= link_to "距離を確認", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}" %>
+<% end %>
