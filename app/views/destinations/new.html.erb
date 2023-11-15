@@ -4,7 +4,7 @@
       <h3>目的地を登録</h3>
     </div>
 
-    <%= form_with model: @destination, url: destinations_path, local: true do |f| %>
+    <%= form_with model: @destination_departure, url: destinations_path, local: true do |f| %>
       <div class="mb-3">
         <%= f.label :place %>
         <%= f.text_field :place, class: "form-control form-control-lg", placeholder: "滋賀県" %>
@@ -12,6 +12,14 @@
       <div class="mb-3">
         <%= f.label :address %>
         <%= f.text_field :address, class: "form-control form-control-lg", placeholder: "1230000" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :spot %>
+        <%= f.text_field :spot, class: "form-control form-control-lg", placeholder: "東京都" %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :location %>
+        <%= f.text_field :location, class: "form-control form-control-lg", placeholder: "1230000" %>
       </div>
       <div class="mb-3">
         <%= f.label :start_date %>
