@@ -16,7 +16,10 @@ class RecordsController < ApplicationController
 
   def show
     @destination = Destination.find(params[:destination_id])
-    @record = Record.find(params[:id])
+    @records = @destination.record
+    if @records.present?
+      @record = Record.find(params[:id])
+    end
   end
 
   def edit
