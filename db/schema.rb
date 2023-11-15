@@ -69,7 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_10_052958) do
     t.integer "gasoline_cost", null: false
     t.integer "accommondation_fee", null: false
     t.integer "express_fee", null: false
-    t.integer "total", null: false
     t.integer "food_expenses", null: false
     t.bigint "user_id"
     t.bigint "destination_id"
