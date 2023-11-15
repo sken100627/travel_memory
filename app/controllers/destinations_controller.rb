@@ -4,12 +4,12 @@ class DestinationsController < ApplicationController
   end
 
   def new
-    @destination = Destination.new
+    @destination_departure = DestinationDeparture.new
   end
 
   def create
-    @destination = Destination.new(destination_params)
-    if @destination.save
+    @destination_departure = DestinationDeparture.new(destination_params)
+    if @destination_departure.save
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -37,7 +37,7 @@ class DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:place, :address, :image, :start_date, :end_date).merge(user_id: current_user.id)
+    params.require(:destination_departure).permit(:place, :address, :image, :start_date, :end_date, :spot, :location).merge(user_id: current_user.id)
   end
 
 end

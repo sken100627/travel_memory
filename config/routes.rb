@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: 'destinations#index'
   resources :destinations do
     resources :records
-    resources :departures
   end
 
 end
