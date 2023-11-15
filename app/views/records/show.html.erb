@@ -5,23 +5,23 @@
     <tbody>
       <tr>
         <td>宿代</td>
-        <td><%= @record.accommondation_fee %></td>
+        <td id="accommodation"><%= @record.accommondation_fee %></td>
       </tr>
       <tr>
         <td>ガソリン代</td>
-        <td><%= @record.gasoline_cost %></td>
+        <td id="gasoline"><%= @record.gasoline_cost %></td>
       </tr>
       <tr>
         <td>食費</td>
-        <td><%= @record.food_expenses %></td>
+        <td id="food"><%= @record.food_expenses %></td>
       </tr>
       <tr>
         <td>高速代</td>
-        <td><%= @record.express_fee %></td>
+        <td id="express"><%= @record.express_fee %></td>
       </tr>
       <tr>
         <td>合計</td>
-        <td><%= @record.total %></td>
+        <td><span id='total-value'>0</span></td>
       </tr>
     </tbody>
   </table>
