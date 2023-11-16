@@ -29,8 +29,8 @@
     </table>
   </div>
 
-  <%= link_to "経費編集", edit_destination_record_path(@destination.id) %>
-  <%= link_to "経費登録", new_destination_record_path(@destination.id) %>
+  <%= link_to "経費編集", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/#{@destination.departure.id}/edit" %>
+  <%= link_to "経費登録", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/new" %>
   <%= link_to '戻る', :back %>
 <% else %>
   <h1>経費登録がされていません</h1>
