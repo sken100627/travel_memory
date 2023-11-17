@@ -11,3 +11,4 @@ function recordTotal() {
   var total = accommodationFee + gasolineFee + foodFee + expressFee;
   document.getElementById('total').innerText = total;
 }
+window.addEventListener('turbo:load', records-show);

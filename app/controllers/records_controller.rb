@@ -34,7 +34,7 @@ class RecordsController < ApplicationController
     @destination = Destination.find(params[:destination_id])
     @record = Record.find(params[:id])
     if @record.update(record_params)
-      redirect_to destination_record_path(@destination.id)
+      redirect_to "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/#{@destination.departure.id}", data: { turbo: false }
     else
       render :edit, status: :unprocessable_entity
     end
