@@ -1,5 +1,8 @@
 <% if @records.present? %>
   <h1 class="ms-5 mt-5 mb-5"><%= @destination.place %></h1>
+
+  <div class='googlemap' id='map'></div>
+
   <h1>距離：<%= @distance %>km</h1>
 
   <div class="table-responsive small px-4 py-5 my-5">
@@ -35,3 +38,31 @@
 <% else %>
   <h1>経費登録がされていません</h1>
 <% end %>
+
+<script>
+  let map
+  
+  function initMap(){
+    geocoder = new google.maps.Geocoder()
+    var test ={lat: <%= @destination.latitude %>, lng: <%= @destination.longitude %>};
+  
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: test,
+      zoom: 15,
+      mapTypeControl: false,  
+      streetViewControl: false
+    });
+
+    var contentString = '住所：<%= @destination.address %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+  
+    marker = new google.maps.Marker({
+      position:  test,
+      map: map,
+      title: contentString
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?ENV['GOOGLEMAP']&callback=initMap" async defer></script>
