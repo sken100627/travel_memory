@@ -21,11 +21,6 @@ class DestinationsController < ApplicationController
     @record = @destination.record
   end
 
-  def edit
-    @destination = Destination.find(params[:id])
-    @departure = Departure.find_by(destination_id: @destination.id)
-  end
-
   def update
     @destination = Destination.find(params[:id])
     if @destination.update(destination_params)
