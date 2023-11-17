@@ -1,10 +1,10 @@
 class DeparturesController < ApplicationController
 
   def show
-    destination = Destination.find(params[:destination_id])
-    departure = Departure.find(params[:id])
+    @destination = Destination.find(params[:destination_id])
+    @departure = Departure.find(params[:id])
 
-    @distance = Geocoder::Calculations.distance_between([destination.latitude,destination.longitude],[departure.latitude,departure.longitude]).round
+    @distance = Geocoder::Calculations.distance_between([@destination.latitude,@destination.longitude],[@departure.latitude,@departure.longitude]).round
 
   end
 

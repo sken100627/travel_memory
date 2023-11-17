@@ -2,17 +2,6 @@
 
 <div class='googlemap' id='map'></div>
 
-<div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold text-body-emphasis">出発地を登録</h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4"></p>
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <%= link_to "登録", new_destination_departure_path(@destination.id), class: "btn btn-primary btn-lg px-4 gap-3" %>
-    </div>
-  </div>
-</div>
-
-
 <script>
   let map
   
@@ -42,8 +31,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?ENV['GOOGLEMAP']&callback=initMap" async defer></script>
 
 <%= link_to "編集", edit_destination_path(@destination.id) %>
-<%= link_to "経費登録", new_destination_record_path(@destination.id) %>
-<%= link_to "経費", destination_record_path(@destination.id) %>
+<%= link_to "経費登録", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/new", data: { turbo: false } %>
+<%= link_to "経費", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/#{@destination.departure.id}", data: { turbo: false } %>
 <%= link_to '戻る', :back %>
 <% if @destination.departure.id.present? %>
  <%= link_to "距離を確認", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}" %>
