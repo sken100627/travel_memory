@@ -36,6 +36,11 @@
   <%= link_to "経費登録", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/new" %>
   <%= link_to '戻る', :back %>
 <% else %>
+  <h1 class="ms-5 mt-5 mb-5"><%= @destination.place %></h1>
+
+  <div class='googlemap' id='map'></div>
+
+  <h1>距離：<%= @distance %>km</h1>
   <h1>経費登録がされていません</h1>
 <% end %>
 

@@ -17,13 +17,12 @@ class RecordsController < ApplicationController
   def show
     @destination = Destination.find(params[:destination_id])
     @records = @destination.record
+    @departure = Departure.find(params[:departure_id])
+    @distance = Geocoder::Calculations.distance_between([@destination.latitude,@destination.longitude],[@departure.latitude,@departure.longitude]).round
     if @records.present?
       @record = Record.find(params[:id])
-      @destination = Destination.find(params[:destination_id])
-      @departure = Departure.find(params[:departure_id])
-
-      @distance = Geocoder::Calculations.distance_between([@destination.latitude,@destination.longitude],[@departure.latitude,@departure.longitude]).round
     end
+
   end
 
   def edit
