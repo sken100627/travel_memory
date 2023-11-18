@@ -1,9 +1,9 @@
 <% if @records.present? %>
-  <h1 class="ms-5 mt-5 mb-5"><%= @destination.place %></h1>
+  <h1 class="text-center mt-5 mb-5"><%= @destination.place %></h1>
 
-  <div class='googlemap' id='map'></div>
+  <div class='googlemap mx-auto mb-4' id='map'></div>
 
-  <h1>距離：<%= @distance %>km</h1>
+  <h1 class="text-center">移動距離：<%= @distance %>km</h1>
 
   <div class="table-responsive small px-4 py-5 my-5">
     <h2 class="text-center mb-3">支出管理</h2>
