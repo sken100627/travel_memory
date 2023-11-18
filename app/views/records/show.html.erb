@@ -40,7 +40,7 @@
   
   <%= link_to "経費編集", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/#{@destination.departure.id}/edit" %>
   
-  <%= link_to '戻る', :back %>
+  <%= link_to '戻る', 'javascript:history.back()' %>
 <% else %>
   <h1 class="ms-5 mt-5 mb-5"><%= @destination.place %></h1>
 
