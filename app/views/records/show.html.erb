@@ -38,8 +38,8 @@
   </div>
 
   <div>
-    <%= link_to "経費編集", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/#{@destination.departure.id}/edit", class: "btn btn-primary mx-auto d-block w-50 mb-1" %>
-    <%= link_to '戻る', 'javascript:history.back()', class: "btn btn-primary mx-auto d-block w-50" %>
+    <%= link_to "経費編集", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/#{@destination.departure.id}/edit", class: "btn btn-primary mx-auto d-block w-25 mb-1" %>
+    <%= link_to '戻る', 'javascript:history.back()', class: "btn btn-primary mx-auto d-block w-25" %>
   </div>
 <% else %>
   <h1 class="text-center mt-5 mb-5"><%= @destination.place %></h1>
@@ -48,7 +48,7 @@
 
   <h1 class="text-center mb-4">移動距離：<%= @distance %>km</h1>
   <h1 class="text-center mb-4">経費登録がされていません</h1>
-  <%= link_to "経費登録", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/new", class: "btn btn-primary mx-auto d-block w-50" %>
+  <%= link_to "経費登録", "/destinations/#{@destination.id}/departures/#{@destination.departure.id}/records/new", class: "btn btn-primary d-block w-25 mx-auto" %>
 <% end %>
 
 <script>
