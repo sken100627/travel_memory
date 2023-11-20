@@ -1,6 +1,10 @@
+body {
+  font-family: 'Yuji Mai', serif;
+}
+
 .googlemap {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
 }
 
 .feature-icon {
@@ -32,4 +36,14 @@
 
 .destination-top {
   height: 100%;
+}
+
+.futidori {
+  color: #f6f5ef;
+  -webkit-text-stroke: 1px #000000;
+}
+
+.date-futidori {
+  color: #ffffff;
+  -webkit-text-stroke: 0.3px #000000;
 }
