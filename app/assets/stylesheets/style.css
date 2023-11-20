@@ -1,3 +1,7 @@
+body {
+  font-family: 'Yuji Mai', serif;
+}
+
 .googlemap {
   height: 400px;
   width: 400px;
