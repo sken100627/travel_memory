@@ -2,6 +2,18 @@ class DestinationDeparture
   include ActiveModel::Model
   attr_accessor :place, :address, :latitude, :longtitude, :start_date, :end_date, :image, :user_id, :spot, :location, :destination_id
 
+  with_options presence: true do
+    validates :place
+    validates :address
+    validates :start_date
+    validates :end_date
+    validates :image
+    validates :user_id
+    validates :spot
+    validates :location
+    validates :destination_id
+  end
+
   def save
     # 寄付情報を保存し、変数donationに代入する
     destination = Destination.create(place: place, address: address, image: image, latitude: latitude, longitude: longtitude, start_date: start_date, end_date: end_date, user_id: user_id)
